@@ -38,6 +38,8 @@
             btn2 = new Button();
             btn1 = new Button();
             btnHome = new Button();
+            pnlSearch = new Panel();
+            tbSearch = new Custom_Controls.RoundTB();
             panel3 = new Panel();
             btnLogoSmall = new Button();
             panel2 = new Panel();
@@ -45,6 +47,7 @@
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             pnlLeft.SuspendLayout();
+            pnlSearch.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -62,6 +65,7 @@
             pnlLeft.Controls.Add(btn2);
             pnlLeft.Controls.Add(btn1);
             pnlLeft.Controls.Add(btnHome);
+            pnlLeft.Controls.Add(pnlSearch);
             pnlLeft.Controls.Add(panel3);
             pnlLeft.Dock = DockStyle.Left;
             pnlLeft.Location = new Point(0, 0);
@@ -77,7 +81,7 @@
             btnHelp.ForeColor = Color.White;
             btnHelp.Image = (Image)resources.GetObject("btnHelp.Image");
             btnHelp.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHelp.Location = new Point(0, 560);
+            btnHelp.Location = new Point(0, 619);
             btnHelp.Name = "btnHelp";
             btnHelp.Padding = new Padding(20, 0, 0, 0);
             btnHelp.Size = new Size(310, 70);
@@ -95,7 +99,7 @@
             btnSettings.ForeColor = Color.White;
             btnSettings.Image = (Image)resources.GetObject("btnSettings.Image");
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(0, 490);
+            btnSettings.Location = new Point(0, 549);
             btnSettings.Name = "btnSettings";
             btnSettings.Padding = new Padding(20, 0, 0, 0);
             btnSettings.Size = new Size(310, 70);
@@ -113,7 +117,7 @@
             btn5.ForeColor = Color.White;
             btn5.Image = (Image)resources.GetObject("btn5.Image");
             btn5.ImageAlign = ContentAlignment.MiddleLeft;
-            btn5.Location = new Point(0, 420);
+            btn5.Location = new Point(0, 479);
             btn5.Name = "btn5";
             btn5.Padding = new Padding(20, 0, 0, 0);
             btn5.Size = new Size(310, 70);
@@ -131,7 +135,7 @@
             btn4.ForeColor = Color.White;
             btn4.Image = (Image)resources.GetObject("btn4.Image");
             btn4.ImageAlign = ContentAlignment.MiddleLeft;
-            btn4.Location = new Point(0, 350);
+            btn4.Location = new Point(0, 409);
             btn4.Name = "btn4";
             btn4.Padding = new Padding(20, 0, 0, 0);
             btn4.Size = new Size(310, 70);
@@ -149,7 +153,7 @@
             btn3.ForeColor = Color.White;
             btn3.Image = (Image)resources.GetObject("btn3.Image");
             btn3.ImageAlign = ContentAlignment.MiddleLeft;
-            btn3.Location = new Point(0, 280);
+            btn3.Location = new Point(0, 339);
             btn3.Name = "btn3";
             btn3.Padding = new Padding(20, 0, 0, 0);
             btn3.Size = new Size(310, 70);
@@ -167,7 +171,7 @@
             btn2.ForeColor = Color.White;
             btn2.Image = (Image)resources.GetObject("btn2.Image");
             btn2.ImageAlign = ContentAlignment.MiddleLeft;
-            btn2.Location = new Point(0, 210);
+            btn2.Location = new Point(0, 269);
             btn2.Name = "btn2";
             btn2.Padding = new Padding(20, 0, 0, 0);
             btn2.Size = new Size(310, 70);
@@ -185,7 +189,7 @@
             btn1.ForeColor = Color.White;
             btn1.Image = (Image)resources.GetObject("btn1.Image");
             btn1.ImageAlign = ContentAlignment.MiddleLeft;
-            btn1.Location = new Point(0, 140);
+            btn1.Location = new Point(0, 199);
             btn1.Name = "btn1";
             btn1.Padding = new Padding(20, 0, 0, 0);
             btn1.Size = new Size(310, 70);
@@ -203,7 +207,7 @@
             btnHome.ForeColor = Color.White;
             btnHome.Image = (Image)resources.GetObject("btnHome.Image");
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHome.Location = new Point(0, 70);
+            btnHome.Location = new Point(0, 129);
             btnHome.Name = "btnHome";
             btnHome.Padding = new Padding(20, 0, 0, 0);
             btnHome.Size = new Size(310, 70);
@@ -212,6 +216,26 @@
             btnHome.Text = "          Home";
             btnHome.TextAlign = ContentAlignment.MiddleLeft;
             btnHome.UseVisualStyleBackColor = true;
+            // 
+            // pnlSearch
+            // 
+            pnlSearch.AutoSize = true;
+            pnlSearch.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pnlSearch.Controls.Add(tbSearch);
+            pnlSearch.Dock = DockStyle.Top;
+            pnlSearch.Location = new Point(0, 70);
+            pnlSearch.Name = "pnlSearch";
+            pnlSearch.Padding = new Padding(10);
+            pnlSearch.Size = new Size(310, 59);
+            pnlSearch.TabIndex = 3;
+            // 
+            // tbSearch
+            // 
+            tbSearch.Dock = DockStyle.Top;
+            tbSearch.Location = new Point(10, 10);
+            tbSearch.Name = "tbSearch";
+            tbSearch.Size = new Size(290, 39);
+            tbSearch.TabIndex = 4;
             // 
             // panel3
             // 
@@ -291,7 +315,11 @@
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += frmMain_Load;
             pnlLeft.ResumeLayout(false);
+            pnlLeft.PerformLayout();
+            pnlSearch.ResumeLayout(false);
+            pnlSearch.PerformLayout();
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             statusStrip1.ResumeLayout(false);
@@ -317,5 +345,7 @@
         private Button btn3;
         private Button btn2;
         private Button btn1;
+        private Custom_Controls.RoundTB tbSearch;
+        private Panel pnlSearch;
     }
 }
