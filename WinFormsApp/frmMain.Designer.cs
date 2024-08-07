@@ -236,6 +236,7 @@
             tbSearch.Name = "tbSearch";
             tbSearch.Size = new Size(290, 39);
             tbSearch.TabIndex = 4;
+            tbSearch.TextChanged += tbSearch_TextChanged;
             // 
             // panel3
             // 

@@ -40,6 +40,29 @@ namespace WinFormsApp
             pnlLeft.Width = shrink ? 100 : 310;
         }
 
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            findButton(tbSearch.Text);
+        }
+
+        private void findButton(string btnlabel)
+        {
+            bool emptyText = string.IsNullOrWhiteSpace(btnlabel);
+            foreach (Control c in pnlLeft.Controls)
+            {
+                if (c is Button btn)
+                {
+                    if (emptyText)
+                        btn.Visible = true;
+                    else
+                    {
+                        btn.Visible = (btn.Text.Contains(btnlabel, StringComparison.OrdinalIgnoreCase));
+                    }
+                }
+
+            }
+        }
+
 
     }
 }
